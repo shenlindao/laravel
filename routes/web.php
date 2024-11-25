@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormProcessor;
+use App\Models\Employee;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,11 @@ Route::get('/form', [FormProcessor::class, 'index']);
 Route::get('/userform', [FormProcessor::class, 'index']);
 
 Route::post('/store_form', [FormProcessor::class, 'store']);
+
+Route::get('/test_database', function () {
+    $employee = new Employee();
+    $employee->name = 'Test Name';
+    $employee->email = 'test@test.ru';
+    $employee->position = 'test position';
+    $employee->save();
+});
