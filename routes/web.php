@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormProcessor;
+use App\Http\Controllers\EmployeeController;
 use App\Models\Employee;
 
 /*
@@ -48,3 +49,13 @@ Route::get('/test_database', function () {
     $employee->position = 'test position';
     $employee->save();
 });
+
+Route::get('/employee', function () {
+    return view('employee');
+});
+
+Route::get('get-employee-data', [EmployeeController::class, 'index']);
+
+Route::post('store-form', [EmployeeController::class, 'store']);
+
+Route::put('/user/{id}', [EmployeeController::class, 'update']);
