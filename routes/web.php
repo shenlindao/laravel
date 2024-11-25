@@ -16,7 +16,23 @@ use App\Models\Employee;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'name' => 'Test Name',
+        'age' => 35,
+        'position' => 'test position',
+        'address' => 'test adress'
+    ];
+    return view('home', $data);
+});
+
+Route::get('/contacts', function () {
+    $contactData = [
+        'address' => 'test adress',
+        'post_code' => '0123456789',
+        'email' => 'test@test.ru',
+        'phone' => '+79998887766',
+    ];
+    return view('contacts', $contactData);
 });
 
 Route::get('/form', [FormProcessor::class, 'index']);
