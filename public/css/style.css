@@ -85,9 +85,6 @@ footer {
     padding: 15px 0;
 }
 
-form {
-}
-
 .form-group {
     margin-bottom: 15px;
 }
@@ -117,6 +114,7 @@ textarea {
     border-radius: 4px;
     background-color: #fff;
     transition: border-color 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 textarea {
@@ -156,4 +154,41 @@ textarea::placeholder,
 input::placeholder {
     font-size: 14px;
     color: #aaa;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+select:disabled {
+    background-color: #e9e9e9;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+select::placeholder {
+    color: #aaa;
+}
+
+select:hover {
+    border-color: #888;
 }
